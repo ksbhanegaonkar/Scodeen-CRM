@@ -5,13 +5,15 @@ import { ContactCreateComponent } from './contact-create/contact-create.componen
 import { HomeComponent } from './home/home.component';
 import { StudentRegistrationComponent } from './student-registration/student-registration.component';
 import { StudentEnquiryComponent } from './student-enquiry/student-enquiry.component';
+import { AddPaymentComponent } from './add-payment/add-payment.component';
 
 
 const routes: Routes = [
   {path:  "", pathMatch:  "full",redirectTo:  "home"},
   {path: "home", component: HomeComponent},
   {path: "user-registration", component: StudentRegistrationComponent},
-  {path: "student-enquiry", component: StudentEnquiryComponent}  
+  {path: "student-enquiry", component: StudentEnquiryComponent},
+  {path: "add-payment", component: AddPaymentComponent}  
 ];
 
 @NgModule({

@@ -15,6 +15,7 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { StudentRegistrationComponent } from './student-registration/student-registration.component';
 import { StudentEnquiryComponent } from './student-enquiry/student-enquiry.component';
+import { AddPaymentComponent } from './add-payment/add-payment.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { StudentEnquiryComponent } from './student-enquiry/student-enquiry.compo
     HeaderComponent,
     FooterComponent,
     StudentRegistrationComponent,
-    StudentEnquiryComponent
+    StudentEnquiryComponent,
+    AddPaymentComponent
   ],
   imports: [
     BrowserModule,
