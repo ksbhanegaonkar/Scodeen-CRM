@@ -16,6 +16,7 @@ import { FooterComponent } from './footer/footer.component';
 import { StudentRegistrationComponent } from './student-registration/student-registration.component';
 import { StudentEnquiryComponent } from './student-enquiry/student-enquiry.component';
 import { AddPaymentComponent } from './add-payment/add-payment.component';
+import { CandidateDetailsComponent } from './candidate-details/candidate-details.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { AddPaymentComponent } from './add-payment/add-payment.component';
     FooterComponent,
     StudentRegistrationComponent,
     StudentEnquiryComponent,
-    AddPaymentComponent
+    AddPaymentComponent,
+    CandidateDetailsComponent
   ],
   imports: [
     BrowserModule,

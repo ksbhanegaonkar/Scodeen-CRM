@@ -6,6 +6,7 @@ import { HomeComponent } from './home/home.component';
 import { StudentRegistrationComponent } from './student-registration/student-registration.component';
 import { StudentEnquiryComponent } from './student-enquiry/student-enquiry.component';
 import { AddPaymentComponent } from './add-payment/add-payment.component';
+import { CandidateDetailsComponent } from './candidate-details/candidate-details.component';
 
 
 const routes: Routes = [
@@ -13,7 +14,8 @@ const routes: Routes = [
   {path: "home", component: HomeComponent},
   {path: "user-registration", component: StudentRegistrationComponent},
   {path: "student-enquiry", component: StudentEnquiryComponent},
-  {path: "add-payment", component: AddPaymentComponent}  
+  {path: "add-payment", component: AddPaymentComponent} , 
+  {path: "candidate-details", component: CandidateDetailsComponent} 
 ];
 
 @NgModule({
