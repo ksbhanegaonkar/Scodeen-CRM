@@ -26,4 +26,11 @@ export class CandidateDetailsComponent implements OnInit {
     });
   }
 
+  getCandidate(){
+    console.log("button clicked !!");
+    this.candidateService.getCandidateDetail(2).subscribe((c)=>{
+      console.log("Candidate added !!");
+    });
+  }
+
 }
