@@ -7,15 +7,16 @@ import {CandidateService} from './candidate-details-service.service';
   styleUrls: ['./candidate-details.component.css']
 })
 export class CandidateDetailsComponent implements OnInit {
-  candidate : Candidate;
+  candidate : Candidate = new Candidate();
   constructor(private candidateService : CandidateService) { 
    
   }
   ngOnInit() {
-     this.candidate = new Candidate();
-     this.candidate.fname = "Sachin";
-     this.candidate.lname = "Tendulkar";
-     this.candidate.mname = "Dont know";
+    
+    
+    //  this.candidate.fname = "Sachin";
+    //  this.candidate.lname = "Tendulkar";
+    //  this.candidate.mname = "Dont know";
     
   }
 

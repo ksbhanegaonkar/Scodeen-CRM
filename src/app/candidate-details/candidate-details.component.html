@@ -1,4 +1,5 @@
 <div class="container" style="margin-top: 70px;">
+    <form>
 
     <div class="row">
   
@@ -11,19 +12,18 @@
             <div class="card-body">
   
                             <div>
-                                <form>
                                     <div class="form-row">
                                     <div class="form-group col-md-4">
                                         <label for="inputEmail4">First Name</label>
-                                        <input type="email" class="form-control" id="inputEmail4" placeholder="">
+                                        <input type="text" [value] ="candidate.fname" (input)="candidate.fname=$event.target.value" class="form-control" id="fname" placeholder="">
                                     </div>
                                     <div class="form-group col-md-4">
                                         <label for="inputPassword4">Middle Name</label>
-                                        <input type="password" class="form-control" id="inputPassword4" placeholder="">
+                                        <input type="text" [value] ="candidate.mname" (input)="candidate.mname=$event.target.value" class="form-control" id="mname" placeholder="">
                                     </div>
                                     <div class="form-group col-md-4">
                                         <label for="inputPassword4">Last Name</label>
-                                        <input type="password" class="form-control" id="inputPassword4" placeholder="">
+                                        <input type="text" [value] ="candidate.lname" (input)="candidate.lname=$event.target.value" class="form-control" id="lname" placeholder="">
                                     </div>
                                     </div>
                                     <div class="form-group">
@@ -75,7 +75,6 @@
                                             </div>
                                         </div>
 
-                                </form>
 
 
                             </div>
@@ -116,15 +115,14 @@
               <div class="card-body">
     
                               <div>
-                                  <form>
                                       <div class="form-row">
                                       <div class="form-group col-md-6">
                                           <label for="inputEmail4">Contact Number</label>
-                                          <input type="phone" class="form-control" id="inputEmail4" placeholder="Phone">
+                                          <input type="phone" [value] ="candidate.contactNumber" (input)="candidate.contactNumber=$event.target.value" class="form-control" id="inputEmail4" placeholder="Phone">
                                       </div>
                                       <div class="form-group col-md-6">
                                           <label for="inputPassword4">Email</label>
-                                          <input type="email" class="form-control" id="inputPassword4" placeholder="Email">
+                                          <input type="email" [value] ="candidate.email" (input)="candidate.email=$event.target.value" class="form-control" id="inputPassword4" placeholder="Email">
                                       </div>
                                       </div>
                                       <div class="form-group">
@@ -154,7 +152,6 @@
                                       </div>
 
 
-                                  </form>
   
   
                               </div>
@@ -176,7 +173,6 @@
               <div class="card-body">
     
                               <div>
-                                  <form>
                                       <div class="form-group">
                                       <label for="inputAddress">Qulification</label>
                                       <input type="text" class="form-control" id="inputAddress" placeholder="">
@@ -208,13 +204,13 @@
                                                 <button class="btn btn-primary" (click)="getCandidate()">Save And New</button>
                                             </div>
                                             <div class="form-group m-2">
-                                                <button class="btn btn-primary" (click)="saveCandidate()">Save</button>
+                                                <button type="submit"  class="btn btn-primary" (click)="saveCandidate()">Save</button>
                                             </div>
                                             <div class="form-group m-2">
                                                 <button class="btn btn-primary" (click)="createContact()">Close</button>
                                             </div>
                                           </div>
-                                  </form>
+                                 
   
   
                               </div>
@@ -225,7 +221,7 @@
       </div>
 
 
-
+    </form>
       
   </div>
   
