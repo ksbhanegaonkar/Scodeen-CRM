@@ -17,6 +17,8 @@ import { StudentRegistrationComponent } from './student-registration/student-reg
 import { StudentEnquiryComponent } from './student-enquiry/student-enquiry.component';
 import { AddPaymentComponent } from './add-payment/add-payment.component';
 import { CandidateDetailsComponent } from './candidate-details/candidate-details.component';
+import { HttpClientModule } from '@angular/common/http';
+import { HttpErrorHandler }     from './http-error-handler.service';
 
 @NgModule({
   declarations: [
@@ -33,14 +35,16 @@ import { CandidateDetailsComponent } from './candidate-details/candidate-details
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     BsDropdownModule.forRoot(),
     TooltipModule.forRoot(),
     ModalModule.forRoot(),
     FormsModule
+  
   ],
   exports: [BsDropdownModule, TooltipModule, ModalModule],
-  providers: [],
+  providers: [HttpErrorHandler],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
