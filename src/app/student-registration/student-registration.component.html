@@ -69,31 +69,17 @@
                     <table class="table table-hover">
                       <thead class="bg-secondary">
                         <tr>
-                          <th>Name</th>
-                          <th>Course</th>
-                          <th>Batch</th>
-                          <th>Registered</th>
-                          <th>Edit</th>
+                          <th *ngFor="let header of searchTableHeaders; let i = index">{{header}}</th>
                         </tr>
                       </thead>
                       <tbody>
-                        <tr>
-                  
-                          <td>Kedar Bhanegaonkar</td>
-                          <td>Java</td>
-                          <td>B1 7 AM</td>
-                          <td>Yes</td>
-                          <td><button class="btn btn-warning">Edit</button></td>
-                     
+                        <tr *ngFor="let row of searchedCandidateList; let i = index">
+                          <td *ngFor="let objKey of searchTableKeys; let j = index">{{ row[objKey] }} </td>
                         </tr>
                       </tbody>
                     </table>
 
                   </div>
-                  
-    
-  
-                 
         </div>
       </div>
 

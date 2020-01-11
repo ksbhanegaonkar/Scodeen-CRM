@@ -10,6 +10,11 @@ export class StudentRegistrationComponent implements OnInit {
   batchDropdownList = [];
   selectedItems = [];
   dropdownSettings = {};
+  searchedCandidateList =[];
+  searchTableHeaders = ["Name","Batch","Registered"];
+  searchTableKeys = ["name","batch","isregistered"];
+
+
   firstName:String;
   middleName:String;
   lastName:String;
@@ -57,11 +62,9 @@ export class StudentRegistrationComponent implements OnInit {
   
 
   searchCandidates(){
-    console.log(this.selectedItems);
-    console.log("First name is ::: "+this.firstName+this.lastName+this.middleName);
     this.candidateService.searchCandidates({"fname":this.firstName,"lname":this.lastName,"batches":this.selectedItems}).subscribe(
       (l)=>{
-        console.log(l);
+        this.searchedCandidateList = l;
       }
     );
   }
