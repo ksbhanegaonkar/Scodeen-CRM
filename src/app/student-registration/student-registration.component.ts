@@ -10,6 +10,9 @@ export class StudentRegistrationComponent implements OnInit {
   batchDropdownList = [];
   selectedItems = [];
   dropdownSettings = {};
+  firstName:String;
+  middleName:String;
+  lastName:String;
   constructor(private candidateService : CandidateService) { }
 
   ngOnInit() {
@@ -49,6 +52,18 @@ export class StudentRegistrationComponent implements OnInit {
   }
   onSelectAll(items: any) {
     console.log(items);
+  }
+
+  
+
+  searchCandidates(){
+    console.log(this.selectedItems);
+    console.log("First name is ::: "+this.firstName+this.lastName+this.middleName);
+    this.candidateService.searchCandidates({"fname":this.firstName,"lname":this.lastName,"batches":this.selectedItems}).subscribe(
+      (l)=>{
+        console.log(l);
+      }
+    );
   }
 
 }
