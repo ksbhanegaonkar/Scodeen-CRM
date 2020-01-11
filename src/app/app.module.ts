@@ -19,6 +19,9 @@ import { AddPaymentComponent } from './add-payment/add-payment.component';
 import { CandidateDetailsComponent } from './candidate-details/candidate-details.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpErrorHandler }     from './http-error-handler.service';
+import {NgMultiSelectDropDownModule} from 'ng-multiselect-dropdown-angular7';
+
+
 
 @NgModule({
   declarations: [
@@ -40,8 +43,8 @@ import { HttpErrorHandler }     from './http-error-handler.service';
     BsDropdownModule.forRoot(),
     TooltipModule.forRoot(),
     ModalModule.forRoot(),
-    FormsModule
-  
+    FormsModule,
+    NgMultiSelectDropDownModule.forRoot()
   ],
   exports: [BsDropdownModule, TooltipModule, ModalModule],
   providers: [HttpErrorHandler],

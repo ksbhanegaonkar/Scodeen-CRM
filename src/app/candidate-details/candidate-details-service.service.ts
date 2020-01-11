@@ -27,6 +27,7 @@ export class CandidateService {
   baseURL = "http://localhost:8080";
   registerCandidateUrL = '/services/registercandidate';
   getCandidateDetailUrL = '/services/getcandidatedetails';
+  getBatchListUrl = "/services/getbatchlist";
 
   registerCandidate(candidate : Candidate) : Observable<Candidate>{
     console.log("candidate is ::"+candidate.fname);
@@ -39,6 +40,13 @@ export class CandidateService {
   getCandidateDetail(candidateId : number) : Observable<Candidate>{
    
     return this.http.get<Candidate>(this.baseURL+this.getCandidateDetailUrL+"/"+candidateId, httpOptions)
+      .pipe(
+        catchError(this.handleError('addHero', null))
+      );
+  }
+
+  getBatchList(): Observable<any>{
+    return this.http.get<any>(this.baseURL+this.getBatchListUrl, httpOptions)
       .pipe(
         catchError(this.handleError('addHero', null))
       );
