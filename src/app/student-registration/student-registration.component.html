@@ -26,13 +26,18 @@
                                         <input type="password" class="form-control" id="inputPassword4" placeholder="">
                                     </div>
                                     </div>
-                                    <div class="form-group">
-                                    <label for="inputAddress">Course Name</label>
-                                    <input type="text" class="form-control" id="inputAddress" placeholder="">
-                                    </div>
                                         <div class="form-group">
                                             <label for="inputAddress">Batch Name</label>
-                                            <input type="text" class="form-control" id="inputAddress" placeholder="">
+                                            <ng-multiselect-dropdown-angular7
+                                            [ngModelOptions]="{standalone: true}"
+                                            [placeholder]="'Select Batch...'"
+                                            [data]="batchDropdownList"
+                                            [(ngModel)]="selectedItems"
+                                            [settings]="dropdownSettings"
+                                            (onSelect)="onItemSelect($event)"
+                                            (onSelectAll)="onSelectAll($event)"
+                                          >
+                                          </ng-multiselect-dropdown-angular7>
                                         </div>
                                     <div class="form-row">
                                             <div class="form-group col-md-6">
