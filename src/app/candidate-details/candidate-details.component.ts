@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {Candidate} from './Candidate';
+
 import {CandidateService} from './candidate-details-service.service';
+import { Candidate } from '../student-registration/Candidate';
 @Component({
   selector: 'app-candidate-details',
   templateUrl: './candidate-details.component.html',

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CandidateService } from '../candidate-details/candidate-details-service.service';
+import { Candidate } from './Candidate';
 
 @Component({
   selector: 'app-student-registration',
@@ -7,18 +8,29 @@ import { CandidateService } from '../candidate-details/candidate-details-service
   styleUrls: ['./student-registration.component.css']
 })
 export class StudentRegistrationComponent implements OnInit {
+  candidate : Candidate = new Candidate();
   batchDropdownList = [];
   selectedItems = [];
   dropdownSettings = {};
   searchedCandidateList =[];
   searchTableHeaders = ["Name","Batch","Registered"];
   searchTableKeys = ["name","batch","isregistered"];
+  newRegister:boolean;
+  
 
 
   firstName:String;
   middleName:String;
   lastName:String;
-  constructor(private candidateService : CandidateService) { }
+  constructor(private candidateService : CandidateService) {
+
+        
+    this.candidate.fname = "";
+    this.candidate.lname = "";
+    this.candidate.mname = "";
+    this.candidate.email="";
+    this.candidate.contactNumber="";
+   }
 
   ngOnInit() {
 
@@ -58,7 +70,9 @@ export class StudentRegistrationComponent implements OnInit {
   onSelectAll(items: any) {
     console.log(items);
   }
-
+  newRegistration(){
+    this.newRegister = true;
+  }
   
 
   searchCandidates(){
@@ -68,5 +82,19 @@ export class StudentRegistrationComponent implements OnInit {
       }
     );
   }
+
+  saveCandidate(){
+     console.log("button clicked !!");
+     this.candidate.enrolledbatches = this.selectedItems;
+     this.candidateService.registerCandidate(this.candidate).subscribe((c)=>{
+       console.log("Candidate added !!");
+     });
+    this.newRegister =  false;
+  }
+
+  closeRegistration(){
+    this.newRegister = false;
+  }
+
 
 }

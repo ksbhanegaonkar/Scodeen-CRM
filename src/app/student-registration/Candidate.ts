@@ -3,8 +3,7 @@ export class Candidate{
     fname : string;
     mname : string;
     lname : string;
-    courseId : number;
-    batchId : number;
+    enrolledbatches : any;
     contactNumber : string; 
     email : string;
     cityId : number;
