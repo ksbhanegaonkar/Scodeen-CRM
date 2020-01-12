@@ -76,7 +76,7 @@ export class StudentRegistrationComponent implements OnInit {
   
 
   searchCandidates(){
-    this.candidateService.searchCandidates({"fname":this.firstName,"lname":this.lastName,"batches":this.selectedItems}).subscribe(
+    this.candidateService.searchCandidates({"fname":this.candidate.fname,"lname":this.candidate.lname,"batches":this.selectedItems}).subscribe(
       (l)=>{
         this.searchedCandidateList = l;
       }
