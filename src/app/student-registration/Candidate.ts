@@ -6,13 +6,13 @@ export class Candidate{
     enrolledbatches : any;
     contactNumber : string; 
     email : string;
-    cityId : number;
+    city:string;
     isRegistered : number;
     isWorking : number;
-    workingField : number;
+    workingField : string;
     enquiryDate : number;
     registerDate : number;
-
+    address:string;
 
 
 }
