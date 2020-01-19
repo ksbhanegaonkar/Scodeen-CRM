@@ -169,7 +169,7 @@
                                     </tr>
                                   </thead>
                                   <tbody>
-                                    <tr *ngFor="let row of selectedItems; let i = index">
+                                    <tr *ngFor="let row of paymentDetails; let i = index">
                                       <td *ngFor="let objKey of paymentTableKeys; let j = index">{{ row[objKey] }} </td>
                                       <td><input type="text"  class="form-control" id="pay" placeholder=""></td>
                                       <td><button class="btn btn-success" (click)="editRegistration(row)">Pay</button></td>

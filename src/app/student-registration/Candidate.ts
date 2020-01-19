@@ -13,6 +13,6 @@ export class Candidate{
     enquiryDate : number;
     registerDate : number;
     address:string;
-
+    paymentDetails:any;
 
 }

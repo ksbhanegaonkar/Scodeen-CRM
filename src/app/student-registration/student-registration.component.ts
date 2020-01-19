@@ -18,6 +18,7 @@ export class StudentRegistrationComponent implements OnInit {
 
   paymentTableHeader = ["Batch Name","Total Fees","Paid Fees","Remaining Fees","Pay","Submit"];
   paymentTableKeys = ["item_text","total_fees","paid_fees","remaining_fees"];
+  paymentDetails : any;
   newRegister:boolean;
   
 
@@ -74,11 +75,13 @@ export class StudentRegistrationComponent implements OnInit {
     console.log(items);
   }
   newRegistration(){
+    this.paymentDetails = this.selectedItems;
     this.newRegister = true;
   }
   editRegistration(row:any){
     this.candidateService.getCandidate(row["id"]).subscribe(c=>{
       this.selectedItems = c["enrolledbatches"];
+      this.paymentDetails = c["paymentDetails"];
       this.candidate = c});
     this.newRegister = true;
     console.dir(row);
