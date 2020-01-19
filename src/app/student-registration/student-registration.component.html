@@ -134,36 +134,11 @@
       
                                        
                                     </div>
-                                    <div class="form-row">
-                                            <div class="form-group col-md-3">
-                                                <label for="inputAddress">Fees Paid</label>
-                                                <input type="text" class="form-control" id="inputAddress" placeholder="">
-                                            </div>
+
+                                  
 
 
-                                            <div class="form-group col-md-3">
-                                                <label for="inputAddress">Remaining Fees</label>
-                                                <input type="text" class="form-control" id="inputAddress" placeholder="">
-                                            </div>
 
-
-                                            <div class="form-group col-md-3">
-                                                <label for="inputAddress">Total Fees</label>
-                                                <input type="text" class="form-control" id="inputAddress" placeholder="">
-                                            </div>
-
-                                            <div class="form-group col-md-3">
-                                                <label for="inputAddress">Payment details</label>
-                                                <button class="btn btn-info" (click)="createContact()">Payment History</button>
-                                            </div>
-
-                                        </div>
-                                        <div class="form-row">
-                                            <div class="form-group col-md-3">
-                                                <label for="inputAddress">Registration Date</label>
-                                                <input type="date" class="form-control" id="inputAddress" placeholder="">
-                                            </div>
-                                        </div>
 
 
 
@@ -175,7 +150,43 @@
     </div>
 
 
+    <div class="row">
+  
+      <div class="col-sm-12">
 
+        <div class="card m-4 bg-light">
+            <div class="card-header bg-secondary">
+             Batch Payment Details
+            </div>
+            <div class="card-body">
+  
+                            <div>
+                              <div class="container" >
+                                <table class="table table-hover">
+                                  <thead class="bg-secondary">
+                                    <tr>
+                                      <th *ngFor="let header of paymentTableHeader; let i = index">{{header}}</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    <tr *ngFor="let row of selectedItems; let i = index">
+                                      <td *ngFor="let objKey of paymentTableKeys; let j = index">{{ row[objKey] }} </td>
+                                      <td><input type="text"  class="form-control" id="pay" placeholder=""></td>
+                                      <td><button class="btn btn-success" (click)="editRegistration(row)">Pay</button></td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+            
+                              </div>
+
+
+
+                            </div>
+
+                        </div>
+                    </div>
+      </div>
+    </div>
 
 
 
@@ -220,6 +231,8 @@
                       </div>
         </div>
       </div>
+
+
 
 
       <div class="row">

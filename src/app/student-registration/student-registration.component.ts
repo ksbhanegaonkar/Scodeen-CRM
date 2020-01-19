@@ -15,6 +15,9 @@ export class StudentRegistrationComponent implements OnInit {
   searchedCandidateList =[];
   searchTableHeaders = ["Id","Name","Batch","Registered","Edit"];
   searchTableKeys = ["id","name","batch","isregistered"];
+
+  paymentTableHeader = ["Batch Name","Total Fees","Paid Fees","Remaining Fees","Pay","Submit"];
+  paymentTableKeys = ["item_text","total_fees","paid_fees","remaining_fees"];
   newRegister:boolean;
   
 
