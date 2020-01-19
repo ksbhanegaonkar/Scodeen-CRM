@@ -29,6 +29,8 @@ export class CandidateService {
   getCandidateDetailUrL = '/services/getcandidatedetails';
   getBatchListUrl = "/services/getbatchlist";
   searchCandidateUrl = "/services/searchcandidate";
+  getCandidateUrl = "/services/getcandidatedetails";
+
 
   registerCandidate(candidate : Candidate) : Observable<Candidate>{
     console.log("candidate is ::"+candidate.fname);
@@ -54,10 +56,16 @@ export class CandidateService {
   }
 
   searchCandidates(searchQuery : any) : Observable<any>{
-    
     return this.http.post<any>(this.baseURL+this.searchCandidateUrl, searchQuery, httpOptions)
       .pipe(
         
+      );
+  }
+
+  getCandidate(id:number): Observable<Candidate>{
+    return this.http.get<Candidate>(this.baseURL+this.getCandidateUrl+"/"+id, httpOptions)
+      .pipe(
+        catchError(this.handleError('addHero', null))
       );
   }
 }

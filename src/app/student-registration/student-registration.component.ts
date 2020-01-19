@@ -13,8 +13,8 @@ export class StudentRegistrationComponent implements OnInit {
   selectedItems = [];
   dropdownSettings = {};
   searchedCandidateList =[];
-  searchTableHeaders = ["Name","Batch","Registered"];
-  searchTableKeys = ["name","batch","isregistered"];
+  searchTableHeaders = ["Id","Name","Batch","Registered","Edit"];
+  searchTableKeys = ["id","name","batch","isregistered"];
   newRegister:boolean;
   
 
@@ -73,7 +73,13 @@ export class StudentRegistrationComponent implements OnInit {
   newRegistration(){
     this.newRegister = true;
   }
-  
+  editRegistration(row:any){
+    this.candidateService.getCandidate(row["id"]).subscribe(c=>{
+      this.selectedItems = c["enrolledbatches"];
+      this.candidate = c});
+    this.newRegister = true;
+    console.dir(row);
+  }
 
   searchCandidates(){
     this.candidateService.searchCandidates({"fname":this.candidate.fname,"lname":this.candidate.lname,"batches":this.selectedItems}).subscribe(

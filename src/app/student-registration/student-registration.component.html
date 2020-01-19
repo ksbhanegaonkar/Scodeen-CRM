@@ -76,6 +76,7 @@
                       <tbody>
                         <tr *ngFor="let row of searchedCandidateList; let i = index">
                           <td *ngFor="let objKey of searchTableKeys; let j = index">{{ row[objKey] }} </td>
+                          <td><button class="btn btn-warning" (click)="editRegistration(row)">Edit</button></td>
                         </tr>
                       </tbody>
                     </table>
