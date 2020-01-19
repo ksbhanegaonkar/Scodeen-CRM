@@ -30,6 +30,7 @@ export class CandidateService {
   getBatchListUrl = "/services/getbatchlist";
   searchCandidateUrl = "/services/searchcandidate";
   getCandidateUrl = "/services/getcandidatedetails";
+  payAmountUrl = "/services/payamount";
 
 
   registerCandidate(candidate : Candidate) : Observable<Candidate>{
@@ -64,6 +65,14 @@ export class CandidateService {
 
   getCandidate(id:number): Observable<Candidate>{
     return this.http.get<Candidate>(this.baseURL+this.getCandidateUrl+"/"+id, httpOptions)
+      .pipe(
+        catchError(this.handleError('addHero', null))
+      );
+  }
+
+  payAmount(candidateId:number,batchId:number, amount:number): Observable<Candidate>{
+    let body  = {"candidate_id":candidateId,"batch_id":batchId,"amount":amount};
+    return this.http.post<any>(this.baseURL+this.payAmountUrl,body, httpOptions)
       .pipe(
         catchError(this.handleError('addHero', null))
       );

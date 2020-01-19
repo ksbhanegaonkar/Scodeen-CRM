@@ -108,5 +108,12 @@ export class StudentRegistrationComponent implements OnInit {
     this.newRegister = false;
   }
 
+  payAmount(row : any){
+    this.candidateService.payAmount(row["candidate_id"],row["batch_id"],row["amount"]).subscribe((c)=>{
+      this.candidate = c;
+      this.paymentDetails = c["paymentDetails"];
+      
+    });
+  }
 
 }
